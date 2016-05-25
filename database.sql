@@ -33,3 +33,11 @@ CREATE TABLE Artiste(
     membresGroupe VARCHAR(150),
     lienWiki VARCHAR(100)
 );
+
+CREATE TABLE Notation(
+    idNotation INT PRIMARY KEY AUTO_INCREMENT,
+    idArtiste INT,
+    idAlbum INT,
+    note INT NOT NULL,
+    commentaire VARCHAR(500)  
+);
