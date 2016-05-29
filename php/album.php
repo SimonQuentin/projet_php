@@ -5,6 +5,8 @@ class Artiste {
     public $nomAlbum //string
     public $dateSortie //date
     public $lienYoutube //string
+    public $nbreNote //int
+    public $note //int
     
     function __construct($id,$nom,$date,$lien)    {
         $this->idAlbum = $id;
@@ -25,6 +27,14 @@ class Artiste {
         return $this->lienYoutube;
     }
     
+    function getNbreNote() {
+        return $this->nbreNote;
+    }    
+    
+    function getNote() {
+        return ($this->note/$this->nbreNote);
+    }
+    
     function setNom($nom) {
         $this->nomAlbum=$nom;
     }
@@ -35,6 +45,11 @@ class Artiste {
        
     function setYoutube($youtube) {
         $this->lienYoutube=$youtube;
+    }
+    
+    function addNote($note) {
+        $this->nbreNote++;
+        $this->note+=$note;
     }
     
 }
