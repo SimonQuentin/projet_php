@@ -56,3 +56,12 @@ CREATE TABLE Groupe(
     artiste INT NOT NULL,
     lienWiki VARCHAR(50)
 );
+
+
+ALTER TABLE Administrateur ADD FOREIGN KEY (adresseMail) REFERENCES User(adresseMail);
+ALTER TABLE Album ADD FOREIGN KEY (artiste) REFERENCES Artiste(idartiste);
+ALTER TABLE Morceaux ADD FOREIGN KEY (artiste) REFERENCES Artiste(idartiste);
+ALTER TABLE Morceaux ADD FOREIGN KEY (album) REFERENCES Album(idAlbum);
+ALTER TABLE Commentaire ADD FOREIGN KEY (adresseMail) REFERENCES User(adresseMail);
+ALTER TABLE Commentaire ADD FOREIGN KEY (album) REFERENCES Album(idAlbum);
+ALTER TABLE Groupe ADD FOREIGN KEY (artiste) REFERENCES Artiste(idartiste);
